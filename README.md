@@ -2,9 +2,10 @@
 
 hanya untuk contoh (capek configurasi di awal project dibuat)
 
-nodejs paket install
+setup paket nodejs dan composer install
 ```sh
 npm install
+composer install
 ```
 
 development:
