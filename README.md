@@ -8,6 +8,12 @@ npm install
 composer install
 ```
 
+start php server
+```sh
+cd public
+php -S localhost:8080
+```
+
 development:
 ```sh
 npm run dev
@@ -15,12 +21,6 @@ npm run dev
 compress js, css:
 ```sh
 npm run build
-```
-
-start php server
-```sh
-cd public
-php -S localhost:8080
 ```
 
 yang digunakan:
