@@ -3,12 +3,31 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const glob = require('glob');
+
+function splitString(stringToSplit, separator) {
+  return stringToSplit.split(separator);
+}
+
+const appPath = path.join(__dirname, '../application');
+const pathEntries = [
+  path.resolve(appPath,'themes/**/assets/js/*.js*'),
+  path.resolve(appPath,'modules/**/js/*.js*'),
+];
+
+const entryFiles = {};
+pathEntries.forEach((path) => {
+  const globpaths = glob.sync(path);
+  const parentdir  = 'js';
+  const ext  = 'js';
+  globpaths.forEach((path) => {
+    const key = splitString(path, `/${parentdir}/`).slice(-1)[0].replace(`.${ext}`, '');
+    entryFiles[key] = path;
+  });
+});
 
 module.exports = {
-  entry: {
-    backend: './application/themes/backend/assets/js/backend.js',
-    welcome: './application/modules/welcome/js/welcome.js',
-  },
+  entry: entryFiles,
   plugins: [
     new ManifestPlugin(),
     new CleanWebpackPlugin(['../public/dist'], {allowExternal: true}),
