@@ -50,7 +50,7 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                modules: true,
+                modules: false,
                 importLoaders: 2,
                 sourceMap: true,
                 minimize: true
@@ -72,6 +72,13 @@ module.exports = {
         })
       }, {
         test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10240,
+          mimetype: 'application/font-woff'
+        }
+      }, {
+        test: /\.woff?(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader',
         options: {
           limit: 10240,

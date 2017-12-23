@@ -17,6 +17,11 @@ compress js, css:
 npm run build
 ```
 
+start php server
+```sh
+cd public
+php -S localhost:8080
+```
 
 yang digunakan:
 - [Codeigniter composer installer](https://github.com/kenjis/codeigniter-composer-installer)

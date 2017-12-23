@@ -988,6 +988,7 @@ class Asset {
 				}
 			}
 		}
+
 		return $ret;
 	}
 
