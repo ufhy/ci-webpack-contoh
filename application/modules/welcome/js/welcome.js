@@ -1,0 +1,1 @@
+console.log('module welcome - welcome.js');
