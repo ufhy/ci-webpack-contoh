@@ -7,6 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry: {
     backend: './application/themes/backend/assets/js/backend.js',
+    welcome: './application/modules/welcome/js/welcome.js',
   },
   plugins: [
     new ManifestPlugin(),
@@ -51,7 +52,8 @@ module.exports = {
               options: {
                 modules: true,
                 importLoaders: 2,
-                sourceMap: true
+                sourceMap: true,
+                minimize: true
               }
             }, {
               loader: 'postcss-loader',

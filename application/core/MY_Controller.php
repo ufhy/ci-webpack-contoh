@@ -19,9 +19,17 @@ class MY_Controller extends MX_Controller
     {
         parent::__construct();
 
+        $this->load->helper('text');
         $this->load->config('application');
         $this->load->library('asset');
         $this->load->library('template');
+
+        Asset::add_path('webpack', array(
+            'path' => 'dist',
+            'js_dir' => '/',
+            'css_dir' => '/',
+            'img_dir' => '/'
+        ));
 
         Asset::add_path('theme', array(
             'path' => 'themes/' . $this->_themeName . '/',
@@ -29,13 +37,6 @@ class MY_Controller extends MX_Controller
             'css_dir' => 'assets/css/',
             'img_dir' => 'assets/img/'
         ));
-        Asset::add_path('webpack', array(
-            'path' => 'dist',
-            'js_dir' => '/',
-            'css_dir' => '/',
-            'img_dir' => '/'
-        ));
-        Asset::set_path('webpack');
 
         $this->template->set_theme($this->_themeName);
         $this->template->set_layout('default');

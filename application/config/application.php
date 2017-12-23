@@ -10,7 +10,7 @@ $config['template'] = array(
     'title_separator' => ' :: ',
     'theme' => null,
     'theme_locations' => array(APPPATH . 'themes/'),
-    'minify_enabled' => (ENVIRONMENT == 'production')
+    'minify_enabled' => (ENVIRONMENT === 'production')
 );
 
 
@@ -45,7 +45,7 @@ $config['assets.asset_js_dir'] = 'js/';
 $config['assets.asset_css_dir'] = 'css/';
 $config['assets.asset_img_dir'] = 'img/';
 
-$config['assets.asset_cache_path'] = 'assets/cache/';
+$config['assets.asset_cache_path'] = 'dist/';
 
 $config['assets.asset_min'] = (ENVIRONMENT == 'production');
 $config['assets.asset_combine'] = (ENVIRONMENT == 'production');
