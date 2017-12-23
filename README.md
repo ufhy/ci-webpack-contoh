@@ -2,6 +2,11 @@
 
 hanya untuk contoh (capek configurasi di awal project dibuat)
 
+nodejs paket install
+```sh
+npm install
+```
+
 development:
 ```sh
 npm run dev
